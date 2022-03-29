@@ -1,5 +1,5 @@
-const lengthOfArr = 40;
-const numbers = Array.from({ length: lengthOfArr }, () => Math.floor(Math.random() * lengthOfArr));
+// const lengthOfArr = 40;
+// const numbers = Array.from({ length: lengthOfArr }, () => Math.floor(Math.random() * lengthOfArr));
 
 const findAmountOfOddNumbers = (numbers) => numbers.filter(number => number > 0 && number % 2 !== 0).length;
 
@@ -7,15 +7,19 @@ const sumOfNumbersSquares = (n) => {
 
     let resultsArr = [];
 
-    for (let i = 0; i < n; i++) {
+    let iterationCount = 0;
 
-        for (let j = 0; j < n; j++) {
+    const max = Math.floor(Math.sqrt(n));
 
-            for (let k = 0; k < n; k++) {
+    for (let x = 0; x < max; x++) {
 
-                if (n === (i ** 2 + j ** 2 + k ** 2)) {
+        for (let y = 0; y < max; y++) {
 
-                    resultsArr.push(i, j, k);
+            for (let z = 0; z < max; z++) {
+
+                if (n === (x ** 2 + y ** 2 + z ** 2)) {
+
+                    resultsArr.push(x, y, z);
 
                 }
             }
